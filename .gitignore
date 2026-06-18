@@ -1,0 +1,4 @@
+# local scratch / screenshots / server logs
+.shot_*.png
+.httpd.log
+.DS_Store
