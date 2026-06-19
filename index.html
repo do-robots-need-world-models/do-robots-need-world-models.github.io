@@ -4,17 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Do Robots Need World Models? — CoRL 2026 Workshop</title>
-  <meta name="description" content="A CoRL 2026 workshop staging a structured scientific debate on explicit prediction, planning, and end-to-end robot learning: when, why, and in what form do robots need world models?" />
+  <meta name="description" content="A CoRL 2026 workshop staging a structured scientific debate on dynamics learning, planning, and end-to-end robot learning: when, why, and in what form do robots need world models?" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Do Robots Need World Models? — CoRL 2026 Workshop" />
-  <meta property="og:description" content="A structured debate on explicit prediction, planning, and end-to-end robot learning at CoRL 2026." />
+  <meta property="og:description" content="A structured debate on dynamics learning, planning, and end-to-end robot learning at CoRL 2026." />
   <meta property="og:url" content="https://do-robots-need-world-models.github.io/" />
   <meta property="og:image" content="https://do-robots-need-world-models.github.io/images/og-preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Do Robots Need World Models? — CoRL 2026 Workshop" />
-  <meta name="twitter:description" content="A structured debate on explicit prediction, planning, and end-to-end robot learning at CoRL 2026." />
+  <meta name="twitter:description" content="A structured debate on dynamics learning, planning, and end-to-end robot learning at CoRL 2026." />
   <meta name="twitter:image" content="https://do-robots-need-world-models.github.io/images/og-preview.png" />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
@@ -44,7 +44,7 @@
     <div class="hero__inner">
       <span class="badge">CoRL 2026 Workshop</span>
       <h1 class="hero__title">Do Robots Need <span class="accent">World Models?</span></h1>
-      <p class="hero__subtitle">A Debate on Explicit Prediction, Planning, and End-to-End Robot Learning</p>
+      <p class="hero__subtitle">A Debate on Dynamics Learning, Planning, and End-to-End Robot Learning</p>
       <p class="hero__meta">CoRL 2026 &middot; Half-day workshop &middot; <span class="tbd">Date &amp; location TBD</span></p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="#cfp">Call for Papers</a>
@@ -60,19 +60,22 @@
       <h2 class="section__title">Overview</h2>
       <div class="prose">
         <p>
-          Recent progress in robot learning has revived a foundational question:
-          <strong>do robots need explicit models of the world in order to act robustly, safely, and generally?</strong>
-          Model-based approaches argue for predictive structure &mdash; models of dynamics, geometry,
-          contact, and action consequences that support planning, adaptation, and counterfactual reasoning.
-          Yet increasingly capable end-to-end policies (imitation, diffusion, and vision&ndash;language&ndash;action models)
-          suggest a competing hypothesis: much of this structure may be learned <em>implicitly</em> from data,
-          without ever exposing a separate model for planning or prediction.
+          World models are rapidly becoming a central paradigm in robot learning. Broadly, they are
+          <strong>predictive systems that let robots anticipate how the world may change under their actions</strong> &mdash;
+          spanning dynamics, contact, geometry, and physics-based models, as well as latent predictors, video models,
+          learned simulators, and world&ndash;action models. Yet their growing impact has exposed an unresolved tension:
+          should predictive structure be made <em>explicit</em> to support planning, counterfactual reasoning, data efficiency,
+          safety, and generalization &mdash; or can it be absorbed <em>implicitly</em> into end-to-end policies that map
+          observations and goals directly to actions?
         </p>
         <p>
-          This workshop turns that tension into a <strong>structured scientific debate</strong>. We ask not whether
-          world models are necessary in the abstract, but <em>when, why, and in what form</em> they help, where they
-          introduce brittleness, and when end-to-end policies are the better choice &mdash; moving past slogans toward
-          practical criteria for choosing between explicit models, end-to-end policies, and hybrids of the two.
+          World models offer reusable structure but may introduce brittleness, hallucinated predictions, modeling errors,
+          slow inference, or unnecessary complexity, while imitation, diffusion, and vision&ndash;language&ndash;action (VLA)
+          policies suggest some of this structure can be learned from data without exposing a separate model for prediction
+          or planning. This workshop turns that tension into a <strong>structured scientific debate</strong> &mdash; asking not
+          whether world models are necessary in the abstract, but <em>when, why, and in what form</em> they help, where they
+          introduce brittleness, and when end-to-end policies are the better choice. Our goal is to turn the debate into
+          <strong>concrete design principles</strong> for choosing among explicit world models, implicit predictive policies, and hybrid systems.
         </p>
         <p>
           The question cuts across reinforcement learning, control, computer vision, simulation, and embodied AI.
@@ -93,32 +96,32 @@
       <div class="motions">
         <article class="motion">
           <span class="motion__num">01</span>
-          <h3>End-to-end policies can internalize the predictive structure needed for robot behavior.</h3>
+          <h3>End-to-end policies can internalize the predictive structure, with learned abstractions, needed for robot behavior.</h3>
           <p>Visuomotor, diffusion, and VLA models may already embed action-conditioned knowledge about dynamics without exposing it for planning.</p>
           <p class="motion__open"><strong>Open problem:</strong> when is implicit structure sufficient, and when does its absence cause brittleness under unseen objectives, novel objects, longer horizons, distribution shift, or failure recovery?</p>
         </article>
         <article class="motion">
           <span class="motion__num">02</span>
-          <h3>Robust long-horizon autonomy requires explicit prediction of dynamics.</h3>
-          <p>Planning, counterfactual reasoning, task decomposition, and failure recovery may demand a deploy-time model of how actions change the world.</p>
-          <p class="motion__open"><strong>Open problem:</strong> do these capabilities truly require an explicit model, or can they emerge from large-scale end-to-end training where short-horizon success masks long-horizon failures?</p>
+          <h3>Explicit prediction of dynamics benefits generalization to diverse goals.</h3>
+          <p>Learning world models provides an independence between dynamics and task objectives, supporting planning for novel goals and test-time scaling of compute.</p>
+          <p class="motion__open"><strong>Open problem:</strong> what characteristics of a downstream task demand an explicit model or make it better suited to be learned from end-to-end training &mdash; and how should this be quantified?</p>
         </article>
         <article class="motion">
           <span class="motion__num">03</span>
-          <h3>Explicit models improve safety, reliability, and uncertainty reasoning.</h3>
-          <p>They promise uncertainty estimation, constraint checking, OOD detection, and safer exploration &mdash; yet inaccurate models can yield overconfident imagined futures and compounding rollout error.</p>
-          <p class="motion__open"><strong>Open problem:</strong> do explicit models genuinely improve safety on real robots, or introduce a new failure mode &mdash; trusting a model of the world that is itself wrong?</p>
+          <h3>General-purpose policies are easier to learn than general-purpose world models.</h3>
+          <p>A policy need only retain information relevant for action selection, whereas a reusable model demands broader counterfactual coverage and faces challenges in defining a state abstraction.</p>
+          <p class="motion__open"><strong>Open problem:</strong> is it easier to scale learning for general-purpose policies, or can one tractable model abstraction support broad reuse and learning from broader data?</p>
         </article>
         <article class="motion">
           <span class="motion__num">04</span>
-          <h3>Scaling data and architectures will reduce the need for explicit modeling.</h3>
-          <p>Larger datasets, broader embodiments, and stronger pretraining keep absorbing capabilities once thought to need structure.</p>
-          <p class="motion__open"><strong>Open problem:</strong> which failures vanish with scale, and which reflect fundamental limits of policies that never explicitly reason about action consequences, physical constraints, or counterfactuals?</p>
+          <h3>Explicit models enable reproducible policy evaluation, supporting policy improvement and safe deployment at scale.</h3>
+          <p>Policy evaluation drives policy improvement and is critical for assessing behavior at deployment time, yet real-world evaluation may be costly or dangerous.</p>
+          <p class="motion__open"><strong>Open problem:</strong> when does reproducible model-based evaluation preserve real-world policy rankings and improvement directions &mdash; or introduce a new failure mode: trusting a model of the world that is itself wrong?</p>
         </article>
         <article class="motion">
           <span class="motion__num">05</span>
           <h3>The real question is not <em>whether</em> to use world models, but <em>where</em> the model should live.</h3>
-          <p>Predictive structure can appear as a deploy-time planner, a learned simulator, a training-time data generator, a latent policy representation, a safety monitor, or an evaluation tool.</p>
+          <p>Predictive dynamics can appear as a deploy-time planner, a learned simulator, a training-time data generator, a pre-trained policy representation, a safety monitor, or an evaluation tool.</p>
           <p class="motion__open"><strong>Open problem:</strong> which role fits which regime, given that a model useful for pretraining may fail at online control, and image prediction may not support contact-rich manipulation?</p>
         </article>
         <article class="motion">
@@ -146,25 +149,26 @@
           </div>
           <p class="speaker__affil">Stanford University / Physical Intelligence</p>
           <span class="side side--implicit">Against world models &middot; implicit / end-to-end</span>
-          <p class="speaker__blurb">Speaking to Motions 1 &amp; 4: work on imitation learning and generalist robot policies argues that robust behavior emerges from large-scale learning, with predictive structure embedded implicitly and increasingly absorbed by scale.</p>
+          <p class="speaker__blurb">Speaking to Motions 1 &amp; 3: work on imitation learning and generalist robot policies argues that robust behavior emerges from large-scale learning, with predictive structure embedded implicitly and increasingly absorbed by scale.</p>
         </article>
         <article class="speaker">
           <div class="speaker__head">
             <h3>Vincent Sitzmann</h3>
-            <span class="pill pill--online">Online</span>
+            <span class="pill pill--committed">Confirmed</span>
+            <span class="pill pill--online">Possibly online</span>
           </div>
-          <p class="speaker__affil">Massachusetts Institute of Technology</p>
+          <p class="speaker__affil">Massachusetts Institute of Technology / Rhoda AI</p>
           <span class="side side--implicit">Against explicit world models &middot; learned / generative</span>
-          <p class="speaker__blurb">Speaking to Motions 1 &amp; 4: work on neural scene representations and generative models argues the structure needed for embodied behavior can be learned directly from data at scale, rather than imposed by hand-structured models.</p>
+          <p class="speaker__blurb">Speaking to Motions 1 &amp; 3: work on neural scene representations and generative models argues the structure needed for embodied behavior can be learned directly from data at scale, rather than imposed by hand-structured models.</p>
         </article>
         <article class="speaker">
           <div class="speaker__head">
-            <h3>Hao Su</h3>
-            <span class="pill pill--online">Online</span>
+            <h3>Yunzhu Li</h3>
+            <span class="pill pill--committed">Confirmed</span>
           </div>
-          <p class="speaker__affil">Fudan University / Institute of General Physical Intelligence</p>
+          <p class="speaker__affil">Columbia University</p>
           <span class="side side--explicit">For world models &middot; explicit</span>
-          <p class="speaker__blurb">Speaking to Motions 2 &amp; 5: work on 3D representations, simulation, and manipulation benchmarks argues that explicit physical, geometric, and simulation-based structure is what lets a robot understand the world and generalize beyond narrow demonstrations.</p>
+          <p class="speaker__blurb">Speaking to Motions 2, 4 &amp; 5: research on structured world models, physical scene understanding, and deformable-object manipulation offers a perspective on when explicit, queryable predictive structure is needed for planning, evaluation, and generalization.</p>
         </article>
         <article class="speaker">
           <div class="speaker__head">
@@ -190,8 +194,8 @@
           <tbody>
             <tr><td>08:50&ndash;09:00</td><td>10 min</td><td>Welcome &amp; opening vote on the six motions</td></tr>
             <tr><td>09:00&ndash;09:25</td><td>25 min</td><td>Invited talk: Chelsea Finn <span class="side-tag side--implicit">implicit / end-to-end</span></td></tr>
-            <tr><td>09:25&ndash;09:50</td><td>25 min</td><td>Invited talk: Hao Su <span class="side-tag side--explicit">explicit world models</span></td></tr>
-            <tr><td>09:50&ndash;10:20</td><td>30 min</td><td>Contributed spotlights &amp; &ldquo;blooper&rdquo; round</td></tr>
+            <tr><td>09:25&ndash;09:50</td><td>25 min</td><td>Invited talk: Yunzhu Li <span class="side-tag side--explicit">explicit world models</span></td></tr>
+            <tr><td>09:50&ndash;10:20</td><td>30 min</td><td>Contributed spotlights</td></tr>
             <tr><td>10:20&ndash;11:00</td><td>40 min</td><td>Coffee break &amp; poster session</td></tr>
             <tr><td>11:00&ndash;11:25</td><td>25 min</td><td>Invited talk: Georgia Chalvatzaki <span class="side-tag side--hybrid">structured / hybrid</span></td></tr>
             <tr><td>11:25&ndash;11:50</td><td>25 min</td><td>Invited talk: Vincent Sitzmann <span class="side-tag side--implicit">implicit</span></td></tr>
@@ -209,19 +213,21 @@
         <div class="cfp__main prose">
           <p>
             We solicit two kinds of contributions via OpenReview &mdash; <strong>standard research papers</strong> and short
-            <strong>position papers</strong> arguing for or against one of the six motions. We explicitly invite in-progress work,
+            <strong>position papers</strong> arguing for the relevant topics. We explicitly invite in-progress work,
             head-to-head comparisons, and <strong>negative or surprising results</strong> (a paradigm that failed where it was
-            expected to win) &mdash; exactly the evidence the debate needs.
+            expected to win) &mdash; exactly the evidence the debate needs. We only accept submissions that have not been
+            published elsewhere or accepted to the main CoRL 2026 conference.
           </p>
           <p>
             Reviewing follows the CoRL main-track <strong>reciprocal model</strong>: each submission nominates one author to review
             another, ensuring at least two reviews per paper, with an organizer serving as editor. Accepted work appears as
-            spotlights and posters, with an optional short video.
+            spotlights and posters, with an optional short video. Two targeted awards recognize both empirical and argumentative
+            contributions: <strong>Best Research Paper</strong> and <strong>Best Position Paper</strong>.
           </p>
           <p class="cfp__topics">
             <strong>Topics include:</strong> explicit and latent world models for control and planning; end-to-end, diffusion, and
             VLA policies; hybrid model-based / model-free systems; counterfactual and long-horizon reasoning; uncertainty and safe
-            deployment; and protocols benchmarking explicit vs. implicit approaches under matched data and compute.
+            deployment; and protocols benchmarking explicit vs. implicit approaches under data and compute.
           </p>
         </div>
         <aside class="cfp__facts">
@@ -231,7 +237,7 @@
             <dt>Tracks</dt><dd>Research papers &amp; position papers</dd>
             <dt>Submission</dt><dd>OpenReview &mdash; <span class="tbd">link TBD</span></dd>
             <dt>Archival</dt><dd class="tbd">TBD</dd>
-            <dt>Awards</dt><dd>Best Position Paper · Best Empirical Comparison</dd>
+            <dt>Awards</dt><dd>Best Research Paper · Best Position Paper</dd>
           </dl>
         </aside>
       </div>
@@ -297,6 +303,22 @@
             <a class="person__link" href="mailto:holly.dinkel@gmail.com">holly.dinkel@gmail.com</a>
           </figcaption>
         </figure>
+        <figure class="person">
+          <img src="images/organizers/jeffrey_ichnowski.jpg" alt="Jeffrey Ichnowski" loading="lazy" />
+          <figcaption>
+            <span class="person__name">Jeffrey Ichnowski</span>
+            <span class="person__affil">Carnegie Mellon University</span>
+            <a class="person__link" href="mailto:jeffi@cmu.edu">jeffi@cmu.edu</a>
+          </figcaption>
+        </figure>
+        <figure class="person">
+          <img src="images/organizers/feifei_li.jpg" alt="Fei-Fei Li" loading="lazy" />
+          <figcaption>
+            <span class="person__name">Fei-Fei Li</span>
+            <span class="person__affil">Stanford University — World Labs</span>
+            <a class="person__link" href="mailto:feifeili@stanford.edu">feifeili@stanford.edu</a>
+          </figcaption>
+        </figure>
       </div>
     </section>
   </main>
@@ -305,7 +327,7 @@
   <footer class="footer" id="contact">
     <div class="footer__inner">
       <p class="footer__title">Do Robots Need World Models?</p>
-      <p>A CoRL 2026 workshop &middot; A debate on explicit prediction, planning, and end-to-end robot learning.</p>
+      <p>A CoRL 2026 workshop &middot; A debate on dynamics learning, planning, and end-to-end robot learning.</p>
       <p class="footer__contact">Questions? Reach the organizers at <a href="mailto:bduister@cmu.edu">bduister@cmu.edu</a>.</p>
       <p class="footer__note">Outcomes will be consolidated into an openly published community white paper.</p>
     </div>
