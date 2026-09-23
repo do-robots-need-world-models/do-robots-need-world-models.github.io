@@ -155,7 +155,7 @@ table { width: 100%; border-collapse: collapse; font-size: .94rem; }
 .cfp__facts dd { margin: 0 0 .3rem; font-size: .95rem; color: var(--ink); font-weight: 500; }
 
 /* ---------- PEOPLE (organizers) ---------- */
-.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.6rem; }
+.people { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
 .person { margin: 0; text-align: center; }
 .person img {
   width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
@@ -178,6 +178,7 @@ table { width: 100%; border-collapse: collapse; font-size: .94rem; }
 @media (max-width: 820px) {
   .cfp { grid-template-columns: 1fr; }
   .cfp__facts { position: static; }
+  .people { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
   .nav__links {
