@@ -14,6 +14,7 @@ css/style.css         Styling. Theme colors live in :root at the top.
 js/main.js            Mobile nav toggle + disabled placeholder links.
 images/
   organizers/         Organizer headshots (400×400, square-cropped).
+  sponsors/           Sponsor logos and source notes.
   favicon.svg         Site favicon.
   og-preview.png      1200×630 social/link-preview image.
 ```
@@ -29,6 +30,10 @@ Everything is in `index.html`, grouped into clearly-labelled `<section>` blocks:
   points into `images/organizers/`.
 - **Call for Papers** — `#cfp`; the OpenReview link is a placeholder (`data-tbd`)
   until the venue is live.
+- **Paper Awards** — `#awards` within Call for Papers; prizes for Best Research
+  Paper and Best Position Paper.
+- **Sponsors** — `#sponsors`; logos link to sponsor websites, with provenance in
+  `images/sponsors/SOURCES.md`.
 
 Theme colors (accent green, the three debate-side colors) are CSS variables at the top
 of `css/style.css`.
