@@ -138,48 +138,48 @@
     <section class="section" id="speakers">
       <h2 class="section__title">Invited Speakers</h2>
       <p class="section__lead">
-        The speakers are balanced across the debate. Following the workshop's format, each speaker is
-        <strong>assigned a motion to defend</strong> &mdash; steelmanning the opposing view first, and closing with one
-        concrete failure case of their own paradigm &mdash; so both sides are argued vigorously, independent of personal lean.
+        These debate assignments are intended to create a rigorous discussion and do not necessarily
+        represent each speaker's personal views on every motion.
       </p>
-      <div class="speakers">
-        <article class="speaker">
-          <div class="speaker__head">
-            <h3>Chelsea Finn</h3>
-            <span class="pill pill--committed">Confirmed</span>
+      <div class="debate-groups">
+        <section class="debate-group debate-group--structured" aria-labelledby="structured-side">
+          <h3 class="debate-group__title" id="structured-side">World-model / structured side</h3>
+          <div class="speakers">
+            <article class="speaker">
+              <div class="speaker__head">
+                <h4>Yunzhu Li</h4>
+                <span class="pill pill--committed">Confirmed</span>
+              </div>
+              <p class="speaker__affil">Columbia University</p>
+            </article>
+            <article class="speaker">
+              <div class="speaker__head">
+                <h4>Georgia Chalvatzaki</h4>
+                <span class="pill pill--committed">Confirmed</span>
+              </div>
+              <p class="speaker__affil">Technical University of Darmstadt</p>
+            </article>
           </div>
-          <p class="speaker__affil">Stanford University / Physical Intelligence</p>
-          <span class="side side--implicit">Against world models &middot; implicit / end-to-end</span>
-          <p class="speaker__blurb">Speaking to Motions 1 &amp; 3: work on imitation learning and generalist robot policies argues that robust behavior emerges from large-scale learning, with predictive structure embedded implicitly and increasingly absorbed by scale.</p>
-        </article>
-        <article class="speaker">
-          <div class="speaker__head">
-            <h3>Vincent Sitzmann</h3>
-            <span class="pill pill--committed">Confirmed</span>
-            <span class="pill pill--online">Possibly online</span>
+        </section>
+        <section class="debate-group debate-group--implicit" aria-labelledby="implicit-side">
+          <h3 class="debate-group__title" id="implicit-side">End-to-end / implicit side</h3>
+          <div class="speakers">
+            <article class="speaker">
+              <div class="speaker__head">
+                <h4>Chelsea Finn</h4>
+                <span class="pill pill--committed">Confirmed</span>
+              </div>
+              <p class="speaker__affil">Stanford University / Physical Intelligence</p>
+            </article>
+            <article class="speaker">
+              <div class="speaker__head">
+                <h4>Vincent Sitzmann</h4>
+                <span class="pill pill--committed">Confirmed</span>
+              </div>
+              <p class="speaker__affil">Massachusetts Institute of Technology / Rhoda AI</p>
+            </article>
           </div>
-          <p class="speaker__affil">Massachusetts Institute of Technology / Rhoda AI</p>
-          <span class="side side--implicit">Against explicit world models &middot; learned / generative</span>
-          <p class="speaker__blurb">Speaking to Motions 1 &amp; 3: work on neural scene representations and generative models argues the structure needed for embodied behavior can be learned directly from data at scale, rather than imposed by hand-structured models.</p>
-        </article>
-        <article class="speaker">
-          <div class="speaker__head">
-            <h3>Yunzhu Li</h3>
-            <span class="pill pill--committed">Confirmed</span>
-          </div>
-          <p class="speaker__affil">Columbia University</p>
-          <span class="side side--explicit">For world models &middot; explicit</span>
-          <p class="speaker__blurb">Speaking to Motions 2, 4 &amp; 5: research on structured world models, physical scene understanding, and deformable-object manipulation offers a perspective on when explicit, queryable predictive structure is needed for planning, evaluation, and generalization.</p>
-        </article>
-        <article class="speaker">
-          <div class="speaker__head">
-            <h3>Georgia Chalvatzaki</h3>
-            <span class="pill pill--committed">Confirmed</span>
-          </div>
-          <p class="speaker__affil">Technical University of Darmstadt</p>
-          <span class="side side--hybrid">For structured world models &middot; hybrid</span>
-          <p class="speaker__blurb">Speaking to Motions 5 &amp; 6: work bridging learned representations and classical planning argues for structured, model-based components over monolithic end-to-end policies &mdash; while clarifying where a model should live and how we would measure whether it helped.</p>
-        </article>
+        </section>
       </div>
     </section>
 
@@ -194,12 +194,12 @@
           </thead>
           <tbody>
             <tr><td>08:50&ndash;09:00</td><td>10 min</td><td>Welcome &amp; opening vote on the six motions</td></tr>
-            <tr><td>09:00&ndash;09:25</td><td>25 min</td><td>Invited talk: Chelsea Finn <span class="side-tag side--implicit">implicit / end-to-end</span></td></tr>
-            <tr><td>09:25&ndash;09:50</td><td>25 min</td><td>Invited talk: Yunzhu Li <span class="side-tag side--explicit">explicit world models</span></td></tr>
+            <tr><td>09:00&ndash;09:25</td><td>25 min</td><td>Invited talk: Chelsea Finn</td></tr>
+            <tr><td>09:25&ndash;09:50</td><td>25 min</td><td>Invited talk: Yunzhu Li</td></tr>
             <tr><td>09:50&ndash;10:20</td><td>30 min</td><td>Contributed spotlights</td></tr>
             <tr><td>10:20&ndash;11:00</td><td>40 min</td><td>Coffee break &amp; poster session</td></tr>
-            <tr><td>11:00&ndash;11:25</td><td>25 min</td><td>Invited talk: Georgia Chalvatzaki <span class="side-tag side--hybrid">structured / hybrid</span></td></tr>
-            <tr><td>11:25&ndash;11:50</td><td>25 min</td><td>Invited talk: Vincent Sitzmann <span class="side-tag side--implicit">implicit</span></td></tr>
+            <tr><td>11:00&ndash;11:25</td><td>25 min</td><td>Invited talk: Georgia Chalvatzaki</td></tr>
+            <tr><td>11:25&ndash;11:50</td><td>25 min</td><td>Invited talk: Vincent Sitzmann</td></tr>
             <tr><td>11:50&ndash;12:40</td><td>50 min</td><td>Structured debate &amp; closing vote</td></tr>
             <tr><td>12:40&ndash;12:50</td><td>10 min</td><td>Awards &amp; closing remarks</td></tr>
           </tbody>
@@ -237,7 +237,7 @@
             <dt>Format</dt><dd>Up to 4 pages, CoRL template</dd>
             <dt>Tracks</dt><dd>Research papers &amp; position papers</dd>
             <dt>Submission</dt><dd><a href="https://openreview.net/group?id=robot-learning.org/CoRL/2026/Workshop/do-robots-need-world-models" target="_blank" rel="noopener">OpenReview</a></dd>
-            <dt>Archival</dt><dd class="tbd">TBD</dd>
+            <dt>Archival</dt><dd>Non-archival</dd>
             <dt>Awards</dt><dd><a href="#awards">Best Research Paper · Best Position Paper</a></dd>
           </dl>
         </aside>
