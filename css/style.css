@@ -120,7 +120,11 @@ a:hover { text-decoration: underline; }
 .debate-group--structured { border-top-color: var(--explicit); }
 .debate-group--implicit { border-top-color: var(--implicit); }
 .debate-group__title { font-size: 1.06rem; line-height: 1.35; letter-spacing: -.01em; margin: 0 0 1rem; }
-.speakers { display: grid; gap: 1.1rem; }
+.speakers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
+.debate { margin-top: 3rem; }
+.debate__title { font-size: 1.35rem; margin: 0; }
+.debate-panelists { display: grid; gap: 1rem; list-style: none; padding: 0; margin: 0; }
+.debate-panelists .speaker__affil { margin-bottom: 0; }
 .moderator { margin-top: 1.1rem; }
 .speaker { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem 1.4rem; box-shadow: var(--shadow); }
 .speaker__head { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
@@ -200,7 +204,7 @@ table { width: 100%; border-collapse: collapse; font-size: .94rem; }
   .people { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
-  .debate-groups, .awards__grid, .sponsors { grid-template-columns: 1fr; }
+  .speakers, .debate-groups, .awards__grid, .sponsors { grid-template-columns: 1fr; }
   .nav__links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; gap: 0; background: #fff; border-bottom: 1px solid var(--line); padding: .5rem 0;
