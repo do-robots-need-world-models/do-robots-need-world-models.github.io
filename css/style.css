@@ -213,3 +213,12 @@ table { width: 100%; border-collapse: collapse; font-size: .94rem; }
   .nav__links a { padding: .7rem clamp(1rem, 4vw, 2rem); }
   .nav__toggle { display: block; }
 }
+
+/* Accepted papers retain the site's restrained typography. */
+.paper-jumps { margin-bottom: 2rem; line-height: 2; }
+.paper-group-title { margin: 2.5rem 0 1rem; scroll-margin-top: 8rem; }
+.paper-group-title span { color: var(--ink-soft); font-weight: 400; }
+.paper-list { list-style: none; padding: 0; margin: 0; }
+.paper-list li { padding: 1rem 0; border-bottom: 1px solid var(--line, #dfe3df); }
+.paper-list a { font-weight: 500; line-height: 1.6; }
+#presenters li { margin-bottom: .7rem; }
