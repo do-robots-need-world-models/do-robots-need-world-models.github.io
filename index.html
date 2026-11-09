@@ -52,7 +52,7 @@
       <div class="hero__cta">
         <a class="btn btn--primary" href="#papers">Accepted Papers</a>
         <a class="btn" href="https://openreview.net/group?id=robot-learning.org/CoRL/2026/Workshop/do-robots-need-world-models" target="_blank" rel="noopener">View on OpenReview</a>
-        <a class="btn" href="#motions">The Six Motions</a>
+        <a class="btn" href="#motions">The Five Motions</a>
       </div>
     </div>
   </section>
@@ -90,9 +90,9 @@
 
     <!-- ============ MOTIONS ============ -->
     <section class="section section--alt" id="motions">
-      <h2 class="section__title">The Six Motions</h2>
+      <h2 class="section__title">The Five Motions</h2>
       <p class="section__lead">
-        Rather than surveying world-model approaches broadly, the workshop stress-tests six concrete claims
+        Rather than surveying world-model approaches broadly, the workshop stress-tests five concrete claims
         shaping the field today. Each is used as a <strong>debate motion</strong>: invited speakers defend assigned
         sides, the audience votes before and after, and a community white paper consolidates the outcome.
       </p>
@@ -123,12 +123,6 @@
         </article>
         <article class="motion">
           <span class="motion__num">05</span>
-          <h3>The real question is not <em>whether</em> to use world models, but <em>where</em> the model should live.</h3>
-          <p>Predictive dynamics can appear as a deploy-time planner, a learned simulator, a training-time data generator, a pre-trained policy representation, a safety monitor, or an evaluation tool.</p>
-          <p class="motion__open"><strong>Open problem:</strong> which role fits which regime, given that a model useful for pretraining may fail at online control, and image prediction may not support contact-rich manipulation?</p>
-        </article>
-        <article class="motion">
-          <span class="motion__num">06</span>
           <h3>Current benchmarks cannot tell us whether world models are necessary.</h3>
           <p>Visual prediction quality is insufficient, and task success alone hides differences in sample efficiency, robustness, and generalization.</p>
           <p class="motion__open"><strong>Open problem:</strong> how do we design comparisons under matched data, compute, and deployment constraints &mdash; covering distribution shift, long horizons, contact-rich interaction, failure recovery, and real-world transfer?</p>
